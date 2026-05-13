@@ -1,0 +1,189 @@
+<!-- File Name : travel.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Travel Booking Webpage</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            margin:0;
+            padding:20px;
+        }
+
+        h1{
+            text-align:center;
+            color:darkblue;
+        }
+
+        h2{
+            color:darkblue;
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-top:8px;
+            margin-bottom:15px;
+            box-sizing:border-box;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid black;
+            padding:10px;
+            text-align:center;
+        }
+
+        button{
+            background:darkblue;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:navy;
+        }
+
+        .section{
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border-radius:8px;
+        }
+
+        #result{
+            color:green;
+            margin-top:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Travel Booking Page</h1>
+
+    <!-- Customer Details Form -->
+
+    <div class="section">
+
+        <h2>Customer Details</h2>
+
+        <form>
+
+            Customer Name:
+            <input type="text" id="name">
+
+            Mobile Number:
+            <input type="text">
+
+            Select Travel Package:
+
+            <select id="package">
+
+                <option>Goa Tour</option>
+                <option>Kashmir Tour</option>
+                <option>Manali Tour</option>
+
+            </select>
+
+        </form>
+
+    </div>
+
+    <!-- Nested Table -->
+
+    <div class="section">
+
+        <h2>Package Information</h2>
+
+        <table>
+
+            <tr>
+                <th>Package Details</th>
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <table>
+
+                        <tr>
+                            <th>Package</th>
+                            <th>Days</th>
+                            <th>Price</th>
+                        </tr>
+
+                        <tr>
+                            <td>Goa Tour</td>
+                            <td>3 Days</td>
+                            <td>₹15000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Kashmir Tour</td>
+                            <td>5 Days</td>
+                            <td>₹30000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Manali Tour</td>
+                            <td>4 Days</td>
+                            <td>₹25000</td>
+                        </tr>
+
+                    </table>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+        <br>
+
+        <!-- DOM Manipulation -->
+
+        <button onclick="showTravel()">
+            Show Selected Travel
+        </button>
+
+        <h3 id="result"></h3>
+
+    </div>
+
+    <!-- JavaScript DOM -->
+
+    <script>
+
+    function showTravel(){
+
+        let travel =
+        document.getElementById("package").value;
+
+        document.getElementById("result").textContent =
+        "Selected Travel Package : " + travel;
+
+    }
+
+    </script>
+
+</body>
+
+</html>

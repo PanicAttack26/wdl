@@ -1,0 +1,148 @@
+ <!-- File Name : todo.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>To-Do List Application</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            margin:0;
+        }
+
+        .container{
+            width:400px;
+            margin:auto;
+            margin-top:50px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        h1{
+            text-align:center;
+            color:darkblue;
+        }
+
+        input{
+            width:70%;
+            padding:10px;
+        }
+
+        button{
+            padding:10px;
+            border:none;
+            background:darkblue;
+            color:white;
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        li{
+            margin-top:15px;
+            font-size:18px;
+        }
+
+        .delete{
+            background:red;
+            margin-left:10px;
+        }
+
+        .update{
+            background:green;
+            margin-left:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>To-Do List</h1>
+
+    <input type="text"
+    id="task"
+    placeholder="Enter Task">
+
+    <button onclick="addTask()">
+        Add
+    </button>
+
+    <ul id="list"></ul>
+
+</div>
+
+<!-- JavaScript DOM -->
+
+<script>
+
+function addTask(){
+
+    let task =
+    document.getElementById("task").value;
+
+    if(task == ""){
+
+        alert("Enter Task");
+        return;
+    }
+
+    let li = document.createElement("li");
+
+    li.textContent = task;
+
+    // Delete Button
+
+    let delBtn =
+    document.createElement("button");
+
+    delBtn.textContent = "Delete";
+
+    delBtn.className = "delete";
+
+    delBtn.onclick = function(){
+
+        li.remove();
+    };
+
+    // Update Button
+
+    let updateBtn =
+    document.createElement("button");
+
+    updateBtn.textContent = "Update";
+
+    updateBtn.className = "update";
+
+    updateBtn.onclick = function(){
+
+        let newTask =
+        prompt("Update Task", li.firstChild.textContent);
+
+        if(newTask != ""){
+
+            li.firstChild.textContent = newTask;
+        }
+    };
+
+    li.appendChild(delBtn);
+
+    li.appendChild(updateBtn);
+
+    document.getElementById("list").appendChild(li);
+
+    document.getElementById("task").value = "";
+}
+
+</script>
+
+</body>
+</html>

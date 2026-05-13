@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Product Advertisement</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px gray;
+        }
+
+        th {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        img {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #16a34a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #15803d;
+        }
+
+        #result {
+            width: 40%;
+            margin:  25px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Product Advertisement</h1>
+
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Link</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://via.placeholder.com/100" alt="Laptop">
+            </td>
+            <td>Laptop</td>
+            <td>50,000</td>
+            <td>
+                <a href="https://www.amazon.in" target="_blank">Visit</a>
+            </td>
+            <td>
+                <button onclick="showProduct('Laptop','₹50,000')">
+                    Select
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://via.placeholder.com/100" alt="Mobile">
+            </td>
+            <td>Mobile</td>
+            <td>20,000</td>
+            <td>
+                <a href="https://www.flipkart.com" target="_blank">Visit</a>
+            </td>
+            <td>
+                <button onclick="showProduct('Mobile','₹20,000')">
+                    Select
+                </button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://via.placeholder.com/100" alt="Headphones">
+            </td>
+            <td>Headphones</td>
+            <td>2,000</td>
+            <td>
+                <a href="https://www.myntra.com" target="_blank">Visit</a>
+            </td>
+            <td>
+                <button onclick="showProduct('Headphones','₹2,000')">
+                    Select
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <div id="result">
+        <h2>Selected Product</h2>
+        <p>No product selected</p>
+    </div>
+
+    <script>
+        function showProduct(name, price) {
+
+            document.getElementById("result").innerHTML =
+                "<h2>Selected Product</h2>" +
+                "<p><b>Product:</b> " + name + "</p>" +
+                "<p><b>Price:</b> " + price + "</p>";
+        }
+    </script>
+
+</body>
+</html>

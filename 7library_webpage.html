@@ -1,0 +1,181 @@
+<!-- File Name : library.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Library Webpage</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            margin:0;
+            padding:20px;
+        }
+
+        h1{
+            text-align:center;
+            color:darkblue;
+        }
+
+        h2{
+            color:darkblue;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid black;
+            padding:10px;
+            text-align:center;
+        }
+
+        img{
+            border-radius:10px;
+        }
+
+        input,select{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:15px;
+            box-sizing:border-box;
+        }
+
+        button{
+            background:darkblue;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:navy;
+        }
+
+        .section{
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px lightgray;
+        }
+
+        #result{
+            color:green;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Library Information</h1>
+
+    <!-- Books Table -->
+
+    <div class="section">
+
+        <table>
+
+            <tr>
+                <th>Book Image</th>
+                <th>Book Name</th>
+                <th>Author</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="book1.jpg" width="100">
+                </td>
+
+                <td>Java Programming</td>
+                <td>James Gosling</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="book2.jpg" width="100">
+                </td>
+
+                <td>Web Technology</td>
+                <td>ABC Author</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Fine Calculator -->
+
+    <div class="section">
+
+        <h2>Book Fine Calculator</h2>
+
+        Enter Late Days:
+        <input type="number" id="days">
+
+        Select Book Type:
+
+        <select id="type">
+
+            <option value="1">Normal Book</option>
+            <option value="2">Reference Book</option>
+
+        </select>
+
+        <button onclick="calculateFine()">
+            Calculate Fine
+        </button>
+
+        <h3 id="result"></h3>
+
+    </div>
+
+    <!-- JavaScript Switch Case -->
+
+    <script>
+
+    function calculateFine(){
+
+        let days =
+        document.getElementById("days").value;
+
+        let type =
+        document.getElementById("type").value;
+
+        let fine = 0;
+
+        switch(type){
+
+            case "1":
+                fine = days * 2;
+                break;
+
+            case "2":
+                fine = days * 5;
+                break;
+
+            default:
+                fine = 0;
+        }
+
+        document.getElementById("result").textContent =
+        "Total Fine = ₹ " + fine;
+    }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!-- File Name : clock.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Digital Clock</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family: Arial;
+            background:linear-gradient(to right, #141e30, #243b55);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .clock-box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0px 0px 20px black;
+            width:350px;
+        }
+
+        h1{
+            color:darkblue;
+            margin-bottom:20px;
+        }
+
+        #clock{
+            font-size:40px;
+            font-weight:bold;
+            color:#ff6600;
+        }
+
+        #date{
+            margin-top:15px;
+            font-size:20px;
+            color:gray;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="clock-box">
+
+    <h1>Digital Clock</h1>
+
+    <div id="clock"></div>
+
+    <div id="date"></div>
+
+</div>
+
+<!-- JavaScript -->
+
+<script>
+
+function showTime(){
+
+    let now = new Date();
+
+    let time = now.toLocaleTimeString();
+
+    let date = now.toDateString();
+
+    document.getElementById("clock").textContent =
+    time;
+
+    document.getElementById("date").textContent =
+    date;
+}
+
+setInterval(showTime,1000);
+
+showTime();
+
+</script>
+
+</body>
+</html>

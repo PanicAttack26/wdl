@@ -1,0 +1,181 @@
+<!-- File Name : college.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>College Information</title>
+
+    <!-- Internal CSS -->
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color:#f2f2f2;
+            margin:0;
+        }
+
+        .header{
+            background:darkblue;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:80%;
+            margin:auto;
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        h2{
+            color:darkblue;
+        }
+
+        .info{
+            font-size:18px;
+            line-height:1.8;
+        }
+
+        .departments table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+        }
+
+        .departments th,
+        .departments td{
+            border:1px solid black;
+            padding:10px;
+            text-align:center;
+        }
+
+        button{
+            background:darkblue;
+            color:white;
+            padding:10px;
+            border:none;
+            cursor:pointer;
+            margin-top:15px;
+        }
+
+        a{
+            text-decoration:none;
+            color:darkblue;
+            font-weight:bold;
+        }
+
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="pract3.css">
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<div class="header">
+
+    <h1>XYZ College</h1>
+
+    <p>Welcome to Our College Website</p>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="container">
+
+    <!-- College Image -->
+
+    <center>
+        <img src="college.jpg" width="400" height="220">
+    </center>
+
+    <br>
+
+    <!-- College Information -->
+
+    <div class="info">
+
+        <h2>About College</h2>
+
+        <p>
+            XYZ College provides quality education in
+            Computer Science, Commerce and Management.
+        </p>
+
+        <p>
+            <b>Location :</b> Pandharpur
+        </p>
+
+        <p>
+            <b>Courses :</b> BCA, B.Com, BBA
+        </p>
+
+    </div>
+
+    <!-- Nested Table -->
+
+    <div class="departments">
+
+        <h2>Departments</h2>
+
+        <table>
+
+            <tr>
+                <th>Department</th>
+                <th>Course</th>
+            </tr>
+
+            <tr>
+                <td id="dept">Computer Science</td>
+                <td>BCA</td>
+            </tr>
+
+            <tr>
+                <td>Commerce</td>
+                <td>B.Com</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <br>
+
+    <!-- Hyperlink -->
+
+    <a href="https://www.google.com" target="_blank">
+        Visit College Website
+    </a>
+
+    <br>
+
+    <!-- JavaScript DOM -->
+
+    <button onclick="changeDept()">
+        Change Department
+    </button>
+
+</div>
+
+<script>
+
+function changeDept(){
+
+    document.getElementById("dept").textContent =
+    "Information Technology";
+
+}
+
+</script>
+
+</body>
+</html>
